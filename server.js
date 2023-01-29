@@ -18,7 +18,12 @@ mongoose.connect("mongodb+srv://oz:2231874q@cluster0.g4wv7b7.mongodb.net/registe
 })
 app.use(express.json())
 
-app.use(cors({origin:'https'}));
+app.use(cors({
+    origin: "*",
+    credentials: true,
+    allowedHeaders: ["Content-Type", "Authorization"],
+    methods: ["GET", "POST", "PUT", "DELETE"]
+}));
 
 
 
